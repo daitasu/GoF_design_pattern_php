@@ -1,0 +1,19 @@
+{
+    "name": "daitasu/GoF_design_pattern_php",
+    "description": "the sample code of GoF design patterns implemented by PHP",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Daitasu\\GoF_design_pattern_php\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "daitasu",
+            "email": "ifctp.dai.monara@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
