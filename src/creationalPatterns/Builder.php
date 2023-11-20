@@ -1,28 +1,30 @@
 <?php
 
-namespace App\CreationalPatterns;
+namespace App\CreationalPatterns\Build;
 
 use App\Dinosaur;
 
 class DinosaurBuilder
 {
-  private string $name;
-  private int $age;
+  private ?string $name = null;
+  private ?int $age = null;
 
-  public function setName(string $name): self
+  public function setAttributes(array $attributes): self
   {
-    $this->name = $name;
-    return $this;
-  }
-
-  public function setAge(int $age): self
-  {
-    $this->age = $age;
+    if (isset($attributes['name'])) {
+      $this->name = $attributes['name'];
+    }
+    if (isset($attributes['age'])) {
+      $this->age = $attributes['age'];
+    }
     return $this;
   }
 
   public function build(): Dinosaur
   {
+    if ($this->name === null || $this->age === null) {
+      throw new \InvalidArgumentException("Name and age must be set.");
+    }
     return new Dinosaur($this->name, $this->age);
   }
 }

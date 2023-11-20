@@ -1,6 +1,6 @@
 <?php
 
-namespace App\CreationalPatterns;
+namespace App\CreationalPatterns\ProtoType;
 
 use App\Dinosaur;
 
